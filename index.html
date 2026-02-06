@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S Shivaraj | Portfolio</title>
+  <meta name="description" content="Portfolio of S Shivaraj – CSE (AIML) student: projects in AI/ML, web, and data." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0f15; --card:#111827; --text:#e5e7eb; --muted:#9ca3af; --brand:#60a5fa; --accent:#22d3ee; --ring: rgba(96,165,250,.45);
+      --light-bg:#ffffff; --light-card:#f8fafc; --light-text:#0f172a; --light-muted:#475569;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0; padding:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; scroll-behavior:smooth}
+    body{background:var(--bg); color:var(--text)}
+    .light{--bg:var(--light-bg); --card:var(--light-card); --text:var(--light-text); --muted:var(--light-muted)}
+
+    .container{max-width:1100px; margin:0 auto; padding:0 20px}
+    header{position:sticky; top:0; z-index:10; backdrop-filter:saturate(180%) blur(8px); background:linear-gradient(to bottom, rgba(11,15,21,.85), rgba(11,15,21,.55)); border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.3px}
+    .brand .dot{width:10px; height:10px; border-radius:50%; background:linear-gradient(45deg,var(--brand),var(--accent)); box-shadow:0 0 0 6px var(--ring)}
+    nav a{color:var(--text); text-decoration:none; margin:0 10px; padding:8px 10px; border-radius:10px}
+    nav a:hover, nav a.active{background:rgba(96,165,250,.15)}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.12); color:var(--text); text-decoration:none; transition:transform .08s ease, box-shadow .2s}
+    .btn:hover{transform:translateY(-1px); box-shadow:0 6px 18px -6px var(--ring)}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),var(--accent)); color:#0b0f15; border:none; font-weight:700}
+
+    /* Hero */
+    .hero{padding:86px 0 54px}
+    .hero .grid{display:grid; grid-template-columns:1.2fr .8fr; gap:36px}
+    .card{background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:18px; padding:22px; box-shadow:0 10px 30px -18px rgba(0,0,0,.5)}
+    .pill{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; background:rgba(96,165,250,.12); color:var(--text); font-size:12px; border:1px solid rgba(96,165,250,.25)}
+    h1{font-size:40px; line-height:1.1; margin:16px 0 8px}
+    p.lead{color:var(--muted); margin:0 0 16px; font-size:16px}
+    .quick{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px}
+
+    /* Sections */
+    section{padding:32px 0}
+    h2{font-size:26px; margin:0 0 14px}
+    .sub{color:var(--muted); margin-top:-6px}
+
+    /* Grid cards */
+    .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+    .grid-2{display:grid; grid-template-columns:repeat(2,1fr); gap:16px}
+
+    /* Timeline/Education */
+    .timeline{border-left:2px dashed rgba(96,165,250,.35); padding-left:16px}
+    .timeline .item{margin:12px 0; position:relative}
+    .timeline .item:before{content:""; position:absolute; left:-10px; top:6px; width:10px; height:10px; border-radius:50%; background:linear-gradient(45deg,var(--brand),var(--accent)); box-shadow:0 0 0 5px var(--ring)}
+
+    /* Footer */
+    footer{padding:36px 0 60px; color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width: 900px){ .hero .grid{grid-template-columns:1fr} .grid-3{grid-template-columns:1fr 1fr} }
+    @media (max-width: 640px){ .grid-3,.grid-2{grid-template-columns:1fr} h1{font-size:32px} }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="dot"></span> S Shivaraj</div>
+      <nav>
+        <a href="#about" class="active">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button id="themeToggle" class="btn" aria-label="Toggle theme">🌓</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="grid">
+        <div class="card">
+          <span class="pill">CSE (AIML) @ SVIT • 2026</span>
+          <h1>Passionate Software Professional</h1>
+          <p class="lead">I build practical AI/ML and web solutions. Strong in Python, C, and exploratory data analysis; excited about impactful projects and collaborative teams.</p>
+          <div class="quick">
+            <a class="btn primary" href="#projects">View Projects</a>
+            <a class="btn" href="#contact">Hire Me</a>
+            <a class="btn" href="Shiva-resume.pdf" download>Download Résumé</a>
+          </div>
+        </div>
+        <div class="card">
+          <h2 style="margin-top:0">At a glance</h2>
+          <ul>
+            <li><strong>Phone:</strong> 8639577401</li>
+            <li><strong>Email:</strong> s63610238@gmail.com</li>
+            <li><strong>Location:</strong> Bangalore, India</li>
+            <li><strong>Interests:</strong> AI/ML, Web Dev, Data</li>
+          </ul>
+          <p class="sub">Open to internships and entry‑level roles in software and AI.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About</h2>
+      <p class="sub">Driven learner committed to building real‑world solutions and staying current with evolving technologies.</p>
+      <div class="grid-3">
+        <div class="card"><strong>Strengths</strong><br>Problem‑solving, communication, leadership, and teamwork.</div>
+        <div class="card"><strong>What I’m Learning</strong><br>Deep Learning for vision, modern JS tooling, clean architecture.</div>
+        <div class="card"><strong>Looking For</strong><br>Challenging opportunities that foster growth and innovation.</div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="grid-3">
+        <div class="card">
+          <strong>Languages</strong>
+          <ul>
+            <li>Python</li>
+            <li>C</li>
+            <li>JavaScript (Basics)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <strong>Tools & Concepts</strong>
+          <ul>
+            <li>EDA for ML</li>
+            <li>Version Control (Git)</li>
+            <li>Presentation (Word, PPT)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <strong>Soft Skills</strong>
+          <ul>
+            <li>Leadership & Teamwork</li>
+            <li>Networking & Communication</li>
+            <li>Decision Making</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid-2">
+        <article class="card">
+          <h3>Automated Detection of  Blood Cancer</h3>
+          <p>Built a system to analyze microscopic blood images for early‑stage cancer detection.</p>
+          <ul>
+            <li>Data preprocessing and augmentation</li>
+            <li>Model experimentation (CNN‑based)</li>
+            <li>Result interpretation and reporting</li>
+          </ul>
+          <div class="quick">
+            <a class="btn" href="#" onclick="alert('Add your GitHub link here!');return false;">GitHub</a>
+            <a class="btn" href="#" onclick="alert('Add a demo link or screenshots!');return false;">Live / Demo</a>
+          </div>
+        </article>
+        <article class="card">
+          <h3>AI‑Powered Blend Attire (Fashion Recommender)</h3>
+          <p>Recommendation system suggesting fashion items based on user preferences.</p>
+          <ul>
+            <li>Similarity‑based retrieval and ranking</li>
+            <li>Basic UI to input preferences</li>
+            <li>Tools: Python, basic DL libraries</li>
+          </ul>
+          <div class="quick">
+            <a class="btn" href="#" onclick="alert('Add your GitHub repo link!');return false;">GitHub</a>
+            <a class="btn" href="#" onclick="alert('Add a live demo link!');return false;">Live / Demo</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <h2>Education</h2>
+      <div class="timeline">
+        <div class="item">
+          <strong>BE CSE (AIML), Sai Vidya Institute of Technology</strong> — <em>2022 – 2026</em>
+          <div>Aggregate: <strong>86%</strong></div>
+        </div>
+        <div class="item">
+          <strong>Sr. Secondary (PU Board, Andhra Pradesh)</strong> — <em>2022</em>
+          <div>Score: <strong>80%</strong></div>
+        </div>
+        <div class="item">
+          <strong>Secondary (State Board)</strong> — <em>2020</em>
+          <div>Score: <strong>98%</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements">
+      <h2>Achievements & Activities</h2>
+      <div class="grid-3">
+        <div class="card">
+          <strong>Internships</strong>
+          <ul>
+            <li>30 hrs: Exploratory Data Analysis for ML</li>
+            <li>40 hrs: Intuition Building for ML & DL</li>
+          </ul>
+        </div>
+        <div class="card">
+          <strong>Awards</strong>
+          <ul>
+            <li>1st Place – Chekumuki Science Samburalu (2019, Mandal Level)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <strong>Participation</strong>
+          <ul>
+            <li>Chandrayaan‑3 Mahaquiz (good score)</li>
+            <li>The Bharat Scouts & Guides – Andhra Pradesh</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="grid-2">
+        <div class="card">
+          <p>Let’s build something together! I’m open to internships, projects, and junior roles.</p>
+          <p><strong>Email:</strong> <a href="mailto:s63610238@gmail.com">s63610238@gmail.com</a><br>
+             <strong>Phone:</strong> <a href="tel:+918639577401">+91 86395 77401</a>
+          </p>
+          <div class="quick">
+            <a class="btn" href="mailto:s63610238@gmail.com?subject=Opportunity%20for%20S%20Shivaraj">Email Me</a>
+            <a class="btn" href="#" onclick="alert('Add your LinkedIn profile link!');return false;">LinkedIn</a>
+            <a class="btn" href="#" onclick="alert('Add your GitHub profile link!');return false;">GitHub</a>
+          </div>
+        </div>
+        <form class="card" onsubmit="sendMsg(event)">
+          <label for="name">Name</label>
+          <input id="name" required placeholder="Your name" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:transparent;color:var(--text);margin:6px 0 10px">
+          <label for="email">Email</label>
+          <input id="email" type="email" required placeholder="you@example.com" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:transparent;color:var(--text);margin:6px 0 10px">
+          <label for="msg">Message</label>
+          <textarea id="msg" rows="4" required placeholder="Say hello…" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:transparent;color:var(--text);margin:6px 0 14px"></textarea>
+          <button class="btn primary" type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> S Shivaraj. Built with HTML • CSS • JS.</div>
+  </footer>
+
+  <script>
+    // Active nav on scroll
+    const links=[...document.querySelectorAll('nav a')];
+    const sections=links.map(a=>document.querySelector(a.getAttribute('href')));
+    const obs=new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        const idx=sections.indexOf(e.target);
+        if(e.isIntersecting){ links.forEach(l=>l.classList.remove('active')); links[idx].classList.add('active'); }
+      });
+    },{rootMargin:'-48% 0px -48% 0px', threshold:[0,1]});
+    sections.forEach(s=>s && obs.observe(s));
+
+    // Theme toggle
+    const toggle=document.getElementById('themeToggle');
+    const setTheme = (t)=>{ document.body.classList.toggle('light', t==='light'); localStorage.setItem('theme',t); };
+    setTheme(localStorage.getItem('theme')||'dark');
+    toggle.addEventListener('click',()=>{ const next = document.body.classList.contains('light')? 'dark':'light'; setTheme(next); });
+
+    // Fake contact form handler
+    function sendMsg(e){
+      e.preventDefault();
+      const name=document.getElementById('name').value.trim();
+      const email=document.getElementById('email').value.trim();
+      const msg=document.getElementById('msg').value.trim();
+      const mailto=`mailto:s63610238@gmail.com?subject=Portfolio%20Message%20from%20${encodeURIComponent(name)}&body=${encodeURIComponent(msg + '\n\nFrom: ' + name + ' <' + email + '>')}`;
+      window.location.href=mailto;
+    }
+
+    // Footer year
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
